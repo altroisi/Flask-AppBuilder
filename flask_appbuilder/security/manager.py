@@ -538,11 +538,11 @@ class BaseSecurityManager(AbstractSecurityManager):
             log.debug("Parse JWT token : {0}".format(me))
             return {
                 "name": me["name"],
-                "email": me["upn"],
-                "first_name": me["given_name"],
-                "last_name": me["family_name"],
-                "id": me["oid"],
-                "username": me["oid"],
+                "email": me["email"],
+                #"first_name": me["given_name"],
+                #"last_name": me["family_name"],
+                "id": me["unique_name"],
+                "username": me["name"],
             }
         else:
             return {}
